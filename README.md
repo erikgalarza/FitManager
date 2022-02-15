@@ -1,5 +1,5 @@
 # FitManager
-FitManager es una aplicacion desarrolladas con el fin de manejar un GYM y fue implementada con:
+FitManager es una aplicacion desarrollada con el fin de administrar un GIMNASIO y fue implementada con:
 - **Nodejs**
 - **Express**
 - **npm**
