@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+        <%= title%>
+    </title>
+    <%- include ('layouts/headStyles.ejs') %>
+</head>
+
+<body>
+    <%- include ('layouts/preloader.ejs') %>
+        <div id="main-wrapper">
+            <%- include('layouts/logo.ejs') %>
+                <%- include('layouts/header.ejs') %>
+                    <%- include('layouts/menu-lateral.ejs') %>
+                        <!-- Body -->
+                        <div class="content-body">
+                            <div class="container-fluid">
+                                <h4 class="card-title">Rutinas</h4>
+                                <div class="row">
+                                    <% rutinas.forEach(rutina=> { %>
+                                        <% const ejer=JSON.parse(rutina.ejercicios) %>
+                                            <div class="col-12 col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="card-title">
+                                                            <p>Rutina N° <%= rutina.id_rutina %>
+                                                            </p>
+                                                        </div>
+                                                        <h4 class="card-title">
+                                                            <%= rutina.nombre %>
+                                                        </h4>
+                                                        <p class="text-muted"><code></code>
+                                                        </p>
+                                                        <div id="headerAccordion<%= rutina.id_rutina %>"
+                                                            class="accordion">
+                                                            <% ejer.forEach(ejer2=> { %>
+                                                                <div class="card">
+                                                                    <div class="card-header">
+                                                                        <h5 class="mb-0 collapsed"
+                                                                            data-toggle="collapse"
+                                                                            data-target="#accordion<%= rutina.id_rutina %><%= ejer2.id_ejercicios %>"
+                                                                            aria-expanded="false"
+                                                                            aria-controls="accordion<%= ejer2.id_ejercicios %>">
+                                                                            <i class="fa" aria-hidden="true"></i>
+                                                                            <%= ejer2.nombre %> x<%= ejer2.repeticiones%>
+                                                                        </h5>
+                                                                    </div>
+                                                                    <div id="accordion<%= rutina.id_rutina %><%= ejer2.id_ejercicios %>"
+                                                                        class="collapse"
+                                                                        data-parent="#headerAccordion<%= rutina.id_rutina %>">
+                                                                        <div class="card-body">
+                                                                            <p>
+                                                                                <%= ejer2.descripcion %>
+                                                                            </p>
+                                                                            <div style="width: 100%;">
+                                                                                <img src="<%= ejer2.imagen %>"
+                                                                                    style="width: 100%; image-rendering: pixelated;"
+                                                                                    alt="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <% }); %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% }); %>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+
+        <!-- EndBody />-->
+        <%- include('layouts/footer.ejs') %>
+            </div>
+            <%- include('layouts/scripts.ejs') %>
+                <script src="assets/plugins/tables/js/jquery.dataTables.min.js"></script>
+                <script src="assets/plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+                <script src="assets/plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+                <script src="js/cliente-rutina.js"></script>
+
+</body>
+
+</html>

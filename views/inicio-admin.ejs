@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+        <%= title%>
+    </title>
+    <%- include ('layouts/headStyles.ejs') %>
+</head>
+<body style="overflow: hidden;">
+    <%- include ('layouts/preloader.ejs') %>
+    <div id="main-wrapper">
+        <%- include('layouts/logo.ejs') %>
+        <%- include('layouts/header.ejs') %>
+        <%- include('layouts/menu-lateral.ejs') %>
+        <!-- Body -->
+        <div class="content-body">
+                <!-- contenido Aquí -->
+            <div class="bg-hero-admin-ds">
+                <img class="" src="assets/images/fondo2.jpg" alt="First slide">
+            </div>
+        </div>
+        <!-- EndBody />-->
+        <%- include('layouts/footer.ejs') %>
+    </div>
+        <%- include('layouts/scripts.ejs') %>
+</body>
+</html>

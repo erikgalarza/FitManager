@@ -1,0 +1,80 @@
+<div class="nk-sidebar">
+    <div class="nk-nav-scroll">
+        <ul class="metismenu" id="menu">
+            
+            <%if(locals.rol == "cliente"){%>
+            <li class="nav-label">Cliente</li>
+            <li>
+                <a href="/dashboard" aria-expanded="false">
+                    <i class="fas fa-tachometer-alt"></i><span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/actualizar" aria-expanded="false">
+                    <i class="ion-android-arrow-up menu-icon"></i><span class="nav-text">Actualizar Datos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cliente-rutina" aria-expanded="false">
+                    <i class="fas fa-running"></i><span class="nav-text">Rutinas</span>
+                </a>
+            </li>
+            <li>
+                <a href="/pago-cliente" aria-expanded="false">
+                    <i class="fas fa-money-check-alt"></i><span class="nav-text">Pagos</span>
+                </a>
+            </li>
+           <%}else if(locals.rol == "admin"){%>
+            <li class="nav-label">Administrador</li>
+            <li>
+                <a href="/admin-admin" aria-expanded="false">
+                    <i class="fas fa-user-shield"></i>
+                    <span class="nav-text">Administrador</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin-membresia" aria-expanded="false">
+                    <i class="fas fa-certificate"></i><span class="nav-text">Membresías</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin-venta" aria-expanded="false">
+                    <i class="fas fa-wallet"></i><span class="nav-text">Ventas</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin-cliente" aria-expanded="false">
+                    <i class="fas fa-users menu-icon"></i><span class="nav-text">Clientes</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin-ejercicios" aria-expanded="false">
+                    <i class="fas fa-dumbbell menu-icon"></i>
+                    <span class="nav-text">Ejercicios</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin-progreso" aria-expanded="false">
+                    <i class="fas fa-tasks"></i></i><span class="nav-text">Progreso</span>
+                </a>
+            </li>
+            <li>
+            <li>
+                <a href="/admin-pago" aria-expanded="false">
+                    <i class="ion-social-usd menu-icon"></i><span class="nav-text">Pagos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin-rutina" aria-expanded="false">
+                    <i class="ion-android-clipboard menu-icon"></i><span class="nav-text">Rutinas</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin-asignar" aria-expanded="false">
+                    <i class="fas fa-hands-helping"></i><span class="nav-text">Asignar Rutina</span>
+                </a>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+</div>

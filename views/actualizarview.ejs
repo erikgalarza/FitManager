@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>
+        <%= title%>
+    </title>
+    <%- include ('layouts/headStyles.ejs') %>
+</head>
+
+<body>
+    <%- include ('layouts/preloader.ejs') %>
+        <div id="main-wrapper">
+            <%- include('layouts/logo.ejs') %>
+                <%- include('layouts/header.ejs') %>
+                    <%- include('layouts/menu-lateral.ejs') %>
+                        <!-- Body -->
+                        <div class="content-body">
+                            <div class="container-fluid">
+                                <!-- datatable -->
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Actualizar Datos</h4>
+                                            <!-- Button trigger modal -->
+                                            <div class="table-responsive" id="contenedor-datos">
+                                                <div class="modal-body">
+                                                    <div class="basic-form px-1">
+                                                        <form id="formActualizarModal" data-action-request="false">
+                                                            <div class="form-group">
+                                                                <label>Cédula Cliente</label>
+                                                                <input type="text" class="form-control" id="inputCedula" value="<%= datosCliente.cedula %>" readonly >
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nombre</label>
+                                                                <input type="text" class="form-control" id="inputNombre" value="<%= datosCliente.nombres %>" readonly required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Correo</label>
+                                                                <input type="email" class="form-control" id="inputCorreo" value="<%= datosCliente.correo %>" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nueva Contraseña</label>
+                                                                <input type="password" class="form-control" id="inputNewPwd" placeholder="Dejar en blanco si no desea actualizar"" >
+                                                                <input type="hidden" class="form-control" id="inputOldPwd" value="<%= datosCliente.password %>" readonly>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Impedimentos Físicos</label>
+                                                                <textarea class="form-control h-150px" id="inputFisicos" rows="3" ><%= datosCliente.impedimentos %></textarea>
+                                                            </div>
+                                                            
+                                                                <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-primary" >Actualizar Datos</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- EndBody />-->
+                        <%- include('layouts/footer.ejs') %>
+
+        <%- include('layouts/scripts.ejs') %>
+
+            <script src="js/actualizar.js"></script>
+</body>
+
+</html>
