@@ -14,7 +14,7 @@ npm install
 
 ## Ejecucion
 
-Para la ejecucion se debe ejecutar el comando indicado, la aplicacion se desplegara de forma localh en el puerto 3000 
+Para la ejecucion se debe ejecutar el comando indicado, la aplicacion se desplegara de forma local en el puerto 3000 
 
 ```sh
 npm run dev
